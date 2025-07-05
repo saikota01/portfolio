@@ -290,13 +290,11 @@ function Timeline() {
 }
 
 function Portfolio() {
-  const [isVisible, setIsVisible] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { scrollYProgress } = useScroll()
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
 
   useEffect(() => {
-    setIsVisible(true)
     // Enhanced smooth scrolling with slower speed
     document.documentElement.style.scrollBehavior = "smooth"
     document.documentElement.style.scrollPaddingTop = "100px"
@@ -645,10 +643,9 @@ function Portfolio() {
                   key={stat.label}
                   className="text-center bg-white dark:bg-neutral-900 p-6 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-800"
                   whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: "spring", stiffness: 300, delay: 1.3 + index * 0.2 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  delay={{ delay: 1.3 + index * 0.2 }}
                 >
                   <div
                     className={`text-3xl font-bold mb-2 ${
@@ -740,10 +737,9 @@ function Portfolio() {
                 <motion.div
                   key={item.title}
                   whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: "spring", stiffness: 300, delay: index * 0.2 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  delay={{ delay: index * 0.2 }}
                   viewport={{ once: false, amount: 0.5 }}
                 >
                   <Card className="p-6 text-center border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 hover:shadow-lg transition-all duration-300">
@@ -950,10 +946,9 @@ function Portfolio() {
                   key={stat.label}
                   className="text-center group cursor-pointer"
                   whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: "spring", stiffness: 300, delay: index * 0.1 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  delay={{ delay: index * 0.1 }}
                   viewport={{ once: false, amount: 0.5 }}
                 >
                   <div className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm group-hover:shadow-lg transition-all duration-300">
