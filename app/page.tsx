@@ -295,6 +295,17 @@ function Portfolio() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
 
   useEffect(() => {
+    // Disable scroll restoration and reset to top on page load
+    if (typeof window !== 'undefined') {
+      // Disable Next.js scroll restoration
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'
+      }
+      
+      // Reset to top on page load/reload
+      window.scrollTo(0, 0)
+    }
+
     // Enhanced smooth scrolling with slower speed
     document.documentElement.style.scrollBehavior = "smooth"
     document.documentElement.style.scrollPaddingTop = "100px"
@@ -321,7 +332,9 @@ function Portfolio() {
     return () => {
       document.documentElement.style.scrollBehavior = "auto"
       document.documentElement.style.scrollPaddingTop = "0"
-      document.head.removeChild(style)
+      if (document.head.contains(style)) {
+        document.head.removeChild(style)
+      }
     }
   }, [])
 
@@ -472,9 +485,9 @@ function Portfolio() {
       {/* Enhanced Navigation */}
       <motion.nav
         className="fixed top-0 w-full z-40 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={{ y: 0, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">

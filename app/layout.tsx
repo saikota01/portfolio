@@ -23,6 +23,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={poppins.variable}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Disable scroll restoration immediately
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+              // Reset scroll position on page load
+              window.addEventListener('beforeunload', function() {
+                window.scrollTo(0, 0);
+              });
+            `,
+          }}
+        />
+      </head>
       <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   )
