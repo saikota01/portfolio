@@ -141,46 +141,32 @@ function AnimatedCounter({ end, duration = 2000 }: { end: number; duration?: num
 function Timeline() {
   const experiences = [
     {
-      title: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      location: "Remote",
-      period: "Jan 2023 - Present",
+      title: "Software Engineer 1",
+      company: "MAQ Software",
+      location: "Hyderabad, India",
+      period: "Apr 2025 - Present",
       description:
-        "Leading development of scalable web applications using React, Node.js, and AWS. Implemented CI/CD pipelines reducing deployment time by 60%.",
+        "As a Software Engineer I, I design, develop, and maintain scalable, cloud-native web applications and microservices using modern technologies such as .NET, Angular, and containerized deployments on Azure Kubernetes Service (AKS). I work closely with cross-functional teams to implement new features, optimize system performance, and ensure high code quality through best practices, code reviews, and automated CI/CD pipelines in Azure DevOps. I contribute to architectural discussions around distributed systems, leveraging Dapr for service-to-service communication, RabbitMQ for messaging, and Redis for state management. I actively participate in agile ceremonies, integrate observability solutions like AppDynamics, and implement secure runtime configurations using Azure Key Vault. Beyond development, I mentor junior developers, promote knowledge sharing within the team, and stay current with industry trends to continuously improve our engineering practices.",
       achievements: [
-        "Built 5+ production applications serving 10k+ users",
-        "Reduced server costs by 40% through optimization",
-        "Mentored 2 junior developers",
+        "Eliminated year-old blockers by resolving critical legacy bugs across both development and DevOps pipelines, restoring stability and delivering a noticeably smoother user experience.",
+        "Architected and deployed end-to-end CI/CD workflows for AI-driven initiatives at one of the largest Education & Learning Management (ELM) organizations in the U.S., accelerating release velocity and ensuring enterprise-grade reliability.",
+        "Boosted AI application performance through deep collaboration with cross-functional teams, achieving a 25% reduction in latency and driving measurable improvements in user satisfaction and adoption."
       ],
-      technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL"],
+      technologies: ["Angular.js", "C#", "Azure", "Docker", "Kubernetes", "Splunk", "AppDynamics"],
     },
     {
-      title: "Junior Full Stack Developer",
-      company: "StartupXYZ",
-      location: "New York, NY",
-      period: "Jun 2022 - Dec 2022",
+      title: "Associate Software Engineer",
+      company: "MAQ Software",
+      location: "Hyderabad, India",
+      period: "Apr 2024 - Mar 2025",
       description:
-        "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+        "As an Associate Software Engineer, I was responsible for building and maintaining industry-grade web applications designed for scalability and performance. My day-to-day involved developing robust backend services, integrating frontend components, collaborating closely with cross-functional teams, and contributing to architectural decisions. I also actively participated in code reviews to uphold coding standards and ensure consistency, readability, and long-term maintainability across our codebase. Additionally, I helped in identifying technical debt and improving overall development workflows within the organization.",
       achievements: [
-        "Delivered 3 major feature releases on time",
-        "Improved application performance by 35%",
-        "Implemented automated testing reducing bugs by 50%",
+        "Improved dashboard charts performance for a UK based industrial client, significantly enhancing user experience and data visualization, with up to 50% faster load times",
+        "Developed an Electronic Medical Records(EMR) application for one of largest Eye Institutes in India",
+        "Handled deployment and scaling of full stack web applications on Azure and On-Premise environments"
       ],
-      technologies: ["Vue.js", "Express.js", "MongoDB", "Jenkins"],
-    },
-    {
-      title: "DevOps Intern",
-      company: "CloudTech Corp",
-      location: "San Francisco, CA",
-      period: "Jan 2022 - May 2022",
-      description:
-        "Assisted in setting up CI/CD pipelines and managing cloud infrastructure. Gained hands-on experience with containerization and orchestration tools.",
-      achievements: [
-        "Set up monitoring for 20+ microservices",
-        "Automated deployment processes",
-        "Reduced infrastructure downtime by 25%",
-      ],
-      technologies: ["Docker", "Kubernetes", "Terraform", "Prometheus"],
+      technologies: ["Next.js", "FastAPI", "PostgreSQL", "Docker", "Linux System Administration", "Kubernetes"],
     },
   ]
 
@@ -188,7 +174,7 @@ function Timeline() {
     <div className="relative">
       {/* Timeline line */}
       <motion.div
-        className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neutral-300 via-neutral-400 to-transparent dark:from-neutral-600 dark:via-neutral-500 dark:to-transparent"
+        className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neutral-300 via-neutral-400 to-transparent dark:from-neutral-600 dark:via-neutral-500 dark:to-transparent"
         initial={{ scaleY: 0 }}
         whileInView={{ scaleY: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
@@ -200,7 +186,7 @@ function Timeline() {
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
-            className="relative flex items-start gap-8 group"
+            className="relative flex items-start gap-4 md:gap-8 group"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: index * 0.3 }}
@@ -208,53 +194,57 @@ function Timeline() {
           >
             {/* Timeline dot */}
             <motion.div className="relative z-10 flex-shrink-0">
-              <div className="w-16 h-16 rounded-full bg-white dark:bg-neutral-900 border-2 border-neutral-300 dark:border-neutral-600 flex items-center justify-center shadow-lg">
-                <Briefcase className="h-6 w-6 text-neutral-600 dark:text-neutral-400" />
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white dark:bg-neutral-900 border-2 border-neutral-300 dark:border-neutral-600 flex items-center justify-center shadow-lg">
+                <Briefcase className="h-4 w-4 md:h-6 md:w-6 text-neutral-600 dark:text-neutral-400" />
               </div>
             </motion.div>
 
             {/* Content */}
             <motion.div whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 300 }}>
               <Card className="flex-1 border border-neutral-200 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300">
-                <CardHeader className="bg-neutral-50/50 dark:bg-neutral-800/50 border-b border-neutral-200 dark:border-neutral-700">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <CardHeader className="bg-neutral-50/50 dark:bg-neutral-800/50 border-b border-neutral-200 dark:border-neutral-700 p-4 sm:p-6">
+                  <div className="flex flex-col gap-3">
                     <div>
-                      <CardTitle className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                      <CardTitle className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-neutral-100 leading-tight">
                         {exp.title}
                       </CardTitle>
-                      <div className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400 mt-1">
-                        <Building className="h-4 w-4" />
-                        <span className="font-medium">{exp.company}</span>
-                        <span>•</span>
-                        <MapPin className="h-4 w-4" />
-                        <span>{exp.location}</span>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-neutral-600 dark:text-neutral-400 mt-2">
+                        <div className="flex items-center gap-1 text-sm sm:text-base">
+                          <Building className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                          <span className="font-medium truncate">{exp.company}</span>
+                        </div>
+                        <span className="hidden sm:inline">•</span>
+                        <div className="flex items-center gap-1 text-sm sm:text-base">
+                          <MapPin className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                          <span className="truncate">{exp.location}</span>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 px-3 py-1 rounded-full">
-                      <Calendar className="h-4 w-4" />
-                      <span>{exp.period}</span>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 px-2 sm:px-3 py-1 rounded-full self-start">
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                      <span className="whitespace-nowrap">{exp.period}</span>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4 p-6">
-                  <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">{exp.description}</p>
+                <CardContent className="space-y-4 p-4 sm:p-6">
+                  <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">{exp.description}</p>
 
                   <div>
-                    <h4 className="font-semibold mb-3 flex items-center gap-2 text-neutral-900 dark:text-neutral-100">
-                      <Award className="h-4 w-4 text-amber-500" />
+                    <h4 className="font-semibold mb-3 flex items-center gap-2 text-neutral-900 dark:text-neutral-100 text-sm sm:text-base">
+                      <Award className="h-3 w-3 sm:h-4 sm:w-4 text-amber-500 flex-shrink-0" />
                       Key Achievements
                     </h4>
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <motion.li
                           key={i}
-                          className="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-400"
+                          className="flex items-start gap-2 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ delay: i * 0.2 }}
                           viewport={{ once: false, amount: 0.5 }}
                         >
-                          <Star className="h-3 w-3 text-amber-500 mt-1 flex-shrink-0" />
+                          <Star className="h-2 w-2 sm:h-3 sm:w-3 text-amber-500 mt-1 flex-shrink-0" />
                           {achievement}
                         </motion.li>
                       ))}
@@ -262,8 +252,8 @@ function Timeline() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-3 text-neutral-900 dark:text-neutral-100">Technologies Used</h4>
-                    <div className="flex flex-wrap gap-2">
+                    <h4 className="font-semibold mb-3 text-neutral-900 dark:text-neutral-100 text-sm sm:text-base">Technologies Used</h4>
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {exp.technologies.map((tech, i) => (
                         <motion.div
                           key={tech}
@@ -272,7 +262,7 @@ function Timeline() {
                           transition={{ delay: i * 0.1 }}
                           viewport={{ once: false, amount: 0.5 }}
                         >
-                          <Badge className="bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-200">
+                          <Badge className="text-xs sm:text-sm bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-200 px-2 py-1">
                             {tech}
                           </Badge>
                         </motion.div>
@@ -301,7 +291,7 @@ function Portfolio() {
       if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual'
       }
-      
+
       // Reset to top on page load/reload
       window.scrollTo(0, 0)
     }
@@ -344,12 +334,11 @@ function Portfolio() {
       icon: Code,
       color: "emerald",
       skills: [
-        { name: "React", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Next.js", image: "/placeholder.svg?height=40&width=40" },
-        { name: "TypeScript", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Tailwind CSS", image: "/placeholder.svg?height=40&width=40" },
-        { name: "JavaScript", image: "/placeholder.svg?height=40&width=40" },
-        { name: "HTML5", image: "/placeholder.svg?height=40&width=40" },
+        { name: "Tailwind CSS", image: "/frontend-skills/tailwindcss.svg?height=40&width=40" },
+        { name: "TypeScript", image: "/frontend-skills/typescript.svg?height=40&width=40" },
+        { name: "Angular", image: "/frontend-skills/angular.svg?height=40&width=40" },
+        { name: "Next.js", image: "/frontend-skills/nextjs.svg?height=40&width=40" },
+        { name: "Redux", image: "/frontend-skills/redux.svg?height=40&width=40" },
       ],
     },
     {
@@ -357,12 +346,12 @@ function Portfolio() {
       icon: Server,
       color: "blue",
       skills: [
-        { name: "Node.js", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Python", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Express.js", image: "/placeholder.svg?height=40&width=40" },
-        { name: "REST APIs", image: "/placeholder.svg?height=40&width=40" },
-        { name: "GraphQL", image: "/placeholder.svg?height=40&width=40" },
-        { name: "FastAPI", image: "/placeholder.svg?height=40&width=40" },
+        { name: "Rest APIs", image: "/backend-skills/restapi.svg?height=40&width=40" },
+        { name: "FastAPI", image: "/backend-skills/fastapi.svg?height=40&width=40" },
+        { name: "NestJS", image: "/backend-skills/nestjs.svg?height=40&width=40" },
+        { name: ".NET", image: "/backend-skills/dotnet.svg?height=40&width=40" },
+        { name: "Dapr", image: "/backend-skills/dapr.svg?height=40&width=40" },
+        { name: "gRPC", image: "/backend-skills/grpc.svg?height=40&width=40" },
       ],
     },
     {
@@ -370,100 +359,101 @@ function Portfolio() {
       icon: Database,
       color: "purple",
       skills: [
-        { name: "PostgreSQL", image: "/placeholder.svg?height=40&width=40" },
-        { name: "MongoDB", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Docker", image: "/placeholder.svg?height=40&width=40" },
-        { name: "AWS", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Kubernetes", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Redis", image: "/placeholder.svg?height=40&width=40" },
+        { name: "PostgreSQL", image: "/database&devops/postgres.svg?height=40&width=40" },
+        { name: "MongoDB", image: "/database&devops/mongodb.svg?height=40&width=40" },
+        { name: "Redis", image: "/database&devops/redis.svg?height=40&width=40" },
+        { name: "RabbitMQ", image: "/database&devops/rabbitmq.svg?height=40&width=40" },
+        { name: "Docker", image: "/database&devops/docker.svg?height=40&width=40" },
+        { name: "Kubernetes", image: "/database&devops/kubernetes.svg?height=40&width=40" },
+        { name: "Azure", image: "/database&devops/azure.svg?height=40&width=40" },
       ],
     },
     {
-      category: "Tools & Others",
+      category: "Testing & Tools",
       icon: Zap,
       color: "orange",
       skills: [
-        { name: "Git", image: "/placeholder.svg?height=40&width=40" },
-        { name: "GitHub", image: "/placeholder.svg?height=40&width=40" },
-        { name: "VS Code", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Figma", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Jest", image: "/placeholder.svg?height=40&width=40" },
-        { name: "Linux", image: "/placeholder.svg?height=40&width=40" },
+        { name: "Git", image: "/testing&tools/git.svg?height=40&width=40" },
+        { name: "GitHub", image: "/testing&tools/github.svg?height=40&width=40" },
+        { name: "VS Code", image: "/testing&tools/vscode.svg?height=40&width=40" },
+        { name: "Figma", image: "/testing&tools/figma.svg?height=40&width=40" },
+        { name: "Jest", image: "/testing&tools/jest.svg?height=40&width=40" },
+        { name: "xUnit", image: "/testing&tools/xunit.png?height=40&width=40" },
       ],
     },
   ]
 
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack e-commerce solution with microservices architecture, Redis caching, and automated deployment pipeline. Features include real-time inventory management, payment processing, and admin dashboard.",
-      tech: ["Next.js", "Node.js", "PostgreSQL", "Docker", "AWS", "Redis"],
-      image: "/placeholder.svg?height=300&width=400",
-      link: "#",
-      github: "#",
-      featured: true,
-      stats: { users: "10k+", uptime: "99.9%", performance: "A+" },
-    },
-    {
-      title: "Real-time Analytics Dashboard",
-      description:
-        "Real-time data visualization platform with WebSocket connections and automated data processing pipelines. Includes custom charts, alerts, and export functionality.",
-      tech: ["React", "Express", "MongoDB", "Socket.io", "Jenkins", "D3.js"],
-      image: "/placeholder.svg?height=300&width=400",
-      link: "#",
-      github: "#",
-      featured: true,
-      stats: { dataPoints: "1M+", latency: "<100ms", accuracy: "99.5%" },
-    },
-    {
-      title: "DevOps Automation Suite",
-      description:
-        "Comprehensive DevOps toolkit for automated testing, deployment, and monitoring across multiple environments. Includes infrastructure as code and automated scaling.",
-      tech: ["Python", "Terraform", "Kubernetes", "Prometheus", "Grafana"],
-      image: "/placeholder.svg?height=300&width=400",
-      link: "#",
-      github: "#",
-      featured: false,
-      stats: { deployments: "500+", downtime: "0.1%", efficiency: "+60%" },
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Collaborative task management application with real-time updates, file sharing, and team collaboration features. Built with modern React patterns.",
-      tech: ["React", "Firebase", "Material-UI", "PWA"],
-      image: "/placeholder.svg?height=300&width=400",
-      link: "#",
-      github: "#",
-      featured: false,
-      stats: { teams: "100+", tasks: "50k+", satisfaction: "4.8/5" },
-    },
-    {
-      title: "API Gateway Service",
-      description:
-        "Scalable API gateway with rate limiting, authentication, and monitoring. Handles traffic routing and load balancing for microservices architecture.",
-      tech: ["Node.js", "Express", "Redis", "Docker", "Nginx"],
-      image: "/placeholder.svg?height=300&width=400",
-      link: "#",
-      github: "#",
-      featured: false,
-      stats: { requests: "1M+/day", latency: "50ms", availability: "99.99%" },
-    },
-    {
-      title: "Machine Learning Pipeline",
-      description:
-        "End-to-end ML pipeline for data processing, model training, and deployment. Includes automated retraining and model versioning.",
-      tech: ["Python", "TensorFlow", "Docker", "Kubernetes", "MLflow"],
-      image: "/placeholder.svg?height=300&width=400",
-      link: "#",
-      github: "#",
-      featured: false,
-      stats: { models: "15+", accuracy: "94%", predictions: "100k+/day" },
-    },
-  ]
+  // const projects = [
+  //   {
+  //     title: "E-Commerce Platform",
+  //     description:
+  //       "Full-stack e-commerce solution with microservices architecture, Redis caching, and automated deployment pipeline. Features include real-time inventory management, payment processing, and admin dashboard.",
+  //     tech: ["Next.js", "Node.js", "PostgreSQL", "Docker", "AWS", "Redis"],
+  //     image: "/placeholder.svg?height=300&width=400",
+  //     link: "#",
+  //     github: "#",
+  //     featured: true,
+  //     stats: { users: "10k+", uptime: "99.9%", performance: "A+" },
+  //   },
+  //   {
+  //     title: "Real-time Analytics Dashboard",
+  //     description:
+  //       "Real-time data visualization platform with WebSocket connections and automated data processing pipelines. Includes custom charts, alerts, and export functionality.",
+  //     tech: ["React", "Express", "MongoDB", "Socket.io", "Jenkins", "D3.js"],
+  //     image: "/placeholder.svg?height=300&width=400",
+  //     link: "#",
+  //     github: "#",
+  //     featured: true,
+  //     stats: { dataPoints: "1M+", latency: "<100ms", accuracy: "99.5%" },
+  //   },
+  //   {
+  //     title: "DevOps Automation Suite",
+  //     description:
+  //       "Comprehensive DevOps toolkit for automated testing, deployment, and monitoring across multiple environments. Includes infrastructure as code and automated scaling.",
+  //     tech: ["Python", "Terraform", "Kubernetes", "Prometheus", "Grafana"],
+  //     image: "/placeholder.svg?height=300&width=400",
+  //     link: "#",
+  //     github: "#",
+  //     featured: false,
+  //     stats: { deployments: "500+", downtime: "0.1%", efficiency: "+60%" },
+  //   },
+  //   {
+  //     title: "Task Management App",
+  //     description:
+  //       "Collaborative task management application with real-time updates, file sharing, and team collaboration features. Built with modern React patterns.",
+  //     tech: ["React", "Firebase", "Material-UI", "PWA"],
+  //     image: "/placeholder.svg?height=300&width=400",
+  //     link: "#",
+  //     github: "#",
+  //     featured: false,
+  //     stats: { teams: "100+", tasks: "50k+", satisfaction: "4.8/5" },
+  //   },
+  //   {
+  //     title: "API Gateway Service",
+  //     description:
+  //       "Scalable API gateway with rate limiting, authentication, and monitoring. Handles traffic routing and load balancing for microservices architecture.",
+  //     tech: ["Node.js", "Express", "Redis", "Docker", "Nginx"],
+  //     image: "/placeholder.svg?height=300&width=400",
+  //     link: "#",
+  //     github: "#",
+  //     featured: false,
+  //     stats: { requests: "1M+/day", latency: "50ms", availability: "99.99%" },
+  //   },
+  //   {
+  //     title: "Machine Learning Pipeline",
+  //     description:
+  //       "End-to-end ML pipeline for data processing, model training, and deployment. Includes automated retraining and model versioning.",
+  //     tech: ["Python", "TensorFlow", "Docker", "Kubernetes", "MLflow"],
+  //     image: "/placeholder.svg?height=300&width=400",
+  //     link: "#",
+  //     github: "#",
+  //     featured: false,
+  //     stats: { models: "15+", accuracy: "94%", predictions: "100k+/day" },
+  //   },
+  // ]
 
-  const featuredProjects = projects.filter((p) => p.featured)
-  const otherProjects = projects.filter((p) => !p.featured)
+  // const featuredProjects = projects.filter((p) => p.featured)
+  // const otherProjects = projects.filter((p) => !p.featured)
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -478,7 +468,7 @@ function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 font-poppins">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 font-poppins overflow-x-hidden w-full">
       <ScrollProgress />
       <ScrollToTop />
 
@@ -489,7 +479,7 @@ function Portfolio() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-2 sm:px-4 py-4">
           <div className="flex justify-between items-center">
             <motion.div
               className="font-bold text-2xl text-neutral-900 dark:text-neutral-100"
@@ -500,7 +490,7 @@ function Portfolio() {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-4 lg:gap-8">
               {["about", "experience", "skills", "projects", "contact"].map((item, index) => (
                 <motion.button
                   key={item}
@@ -561,8 +551,8 @@ function Portfolio() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 relative overflow-hidden">
-        <motion.div className="container mx-auto text-center relative z-10" style={{ opacity }}>
+      <section className="pt-24 pb-16 px-2 sm:px-4 relative overflow-hidden">
+        <motion.div className="container mx-auto text-center relative z-10 px-2 sm:px-4" style={{ opacity }}>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -573,11 +563,11 @@ function Portfolio() {
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <Image src="/placeholder.svg?height=128&width=128" alt="Profile" fill className="object-cover" />
+              <Image src="/profile.jpg?height=128&width=128" alt="Profile" fill className="object-cover" />
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-4 text-neutral-900 dark:text-neutral-100"
+              className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-neutral-900 dark:text-neutral-100"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
@@ -586,7 +576,7 @@ function Portfolio() {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-2 font-medium"
+              className="text-lg sm:text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 mb-2 font-medium"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -595,7 +585,7 @@ function Portfolio() {
             </motion.p>
 
             <motion.p
-              className="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.7 }}
@@ -611,32 +601,35 @@ function Portfolio() {
               transition={{ duration: 1, delay: 0.9 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  size="lg"
-                  className="group bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                  onClick={() => scrollToSection("contact")}
-                >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Contact Me
-                  <motion.div
-                    className="ml-2"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+                <a href="mailto:saikotareddy07@gmail.com">
+                  <Button
+                    size="lg"
+                    className="group bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <ArrowRight className="h-5 w-5" />
-                  </motion.div>
-                </Button>
+                    <Mail className="mr-2 h-5 w-5" />
+                    Contact Me
+                    <motion.div
+                      className="ml-2"
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+                    >
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.div>
+                  </Button>
+                </a>
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="group bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Resume
-                </Button>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="group bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <Download className="mr-2 h-5 w-5" />
+                    Download Resume
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -661,17 +654,16 @@ function Portfolio() {
                   animate={{ opacity: 1, y: 0 }}
                 >
                   <div
-                    className={`text-3xl font-bold mb-2 ${
-                      stat.color === "emerald"
-                        ? "text-emerald-600 dark:text-emerald-400"
-                        : stat.color === "blue"
-                          ? "text-blue-600 dark:text-blue-400"
-                          : "text-purple-600 dark:text-purple-400"
-                    }`}
+                    className={`text-2xl sm:text-3xl font-bold mb-2 ${stat.color === "emerald"
+                      ? "text-emerald-600 dark:text-emerald-400"
+                      : stat.color === "blue"
+                        ? "text-blue-600 dark:text-blue-400"
+                        : "text-purple-600 dark:text-purple-400"
+                      }`}
                   >
                     <AnimatedCounter end={stat.value} />+
                   </div>
-                  <p className="text-neutral-600 dark:text-neutral-400 font-medium">{stat.label}</p>
+                  <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-medium">{stat.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -688,10 +680,10 @@ function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-4 bg-white dark:bg-neutral-900">
-        <div className="container mx-auto">
+      <section id="about" className="py-16 px-2 sm:px-4 bg-white dark:bg-neutral-900">
+        <div className="container mx-auto px-2 sm:px-4">
           <motion.h2
-            className="text-3xl font-bold text-center mb-12 text-neutral-900 dark:text-neutral-100"
+            className="text-2xl sm:text-3xl font-bold text-center mb-12 text-neutral-900 dark:text-neutral-100"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -699,7 +691,7 @@ function Portfolio() {
           >
             About Me
           </motion.h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center max-w-6xl mx-auto">
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0, x: -50 }}
@@ -707,12 +699,12 @@ function Portfolio() {
               transition={{ duration: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              <p className="text-base sm:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
                 I'm a passionate Full Stack Developer with DevOps expertise, dedicated to building scalable web
                 applications and maintaining robust infrastructure. With 1.5 years of professional experience, I've
                 worked on diverse projects ranging from e-commerce platforms to real-time analytics dashboards.
               </p>
-              <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              <p className="text-base sm:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
                 My journey in tech has equipped me with a comprehensive understanding of both frontend and backend
                 technologies, along with modern DevOps practices including containerization, CI/CD pipelines, and cloud
                 infrastructure management.
@@ -735,7 +727,7 @@ function Portfolio() {
             </motion.div>
 
             <motion.div
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -755,20 +747,19 @@ function Portfolio() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.5 }}
                 >
-                  <Card className="p-6 text-center border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 hover:shadow-lg transition-all duration-300">
+                  <Card className="p-6 text-center border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                     <item.icon
-                      className={`h-8 w-8 mx-auto mb-4 ${
-                        item.color === "emerald"
-                          ? "text-emerald-600 dark:text-emerald-400"
-                          : item.color === "blue"
-                            ? "text-blue-600 dark:text-blue-400"
-                            : item.color === "purple"
-                              ? "text-purple-600 dark:text-purple-400"
-                              : "text-orange-600 dark:text-orange-400"
-                      }`}
+                      className={`h-8 w-8 mx-auto mb-4 ${item.color === "emerald"
+                        ? "text-emerald-600 dark:text-emerald-400"
+                        : item.color === "blue"
+                          ? "text-blue-600 dark:text-blue-400"
+                          : item.color === "purple"
+                            ? "text-purple-600 dark:text-purple-400"
+                            : "text-orange-600 dark:text-orange-400"
+                        }`}
                     />
-                    <h3 className="font-semibold mb-2 text-neutral-900 dark:text-neutral-100">{item.title}</h3>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">{item.desc}</p>
+                    <h3 className="font-semibold mb-2 text-neutral-900 dark:text-neutral-100 text-sm sm:text-base">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 flex-grow">{item.desc}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -778,8 +769,8 @@ function Portfolio() {
       </section>
 
       {/* Experience Section with Timeline */}
-      <section id="experience" className="py-16 px-4 bg-neutral-50 dark:bg-neutral-950">
-        <div className="container mx-auto">
+      <section id="experience" className="py-16 px-2 sm:px-4 bg-neutral-50 dark:bg-neutral-950">
+        <div className="container mx-auto px-2 sm:px-4">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -787,8 +778,8 @@ function Portfolio() {
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <h2 className="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Professional Experience</h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Professional Experience</h2>
+            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
               My journey through various roles has shaped me into a versatile developer with strong technical and
               leadership skills.
             </p>
@@ -800,16 +791,16 @@ function Portfolio() {
       </section>
 
       {/* Enhanced Technical Skills Section */}
-      <section id="skills" className="py-16 px-4 bg-white dark:bg-neutral-900 relative overflow-hidden">
+      <section id="skills" className="py-16 px-2 sm:px-4 bg-white dark:bg-neutral-900 relative overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5 dark:opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 border border-neutral-300 dark:border-neutral-600 rounded-full"></div>
-          <div className="absolute top-32 right-20 w-16 h-16 border border-neutral-300 dark:border-neutral-600 rounded-lg rotate-45"></div>
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 border border-neutral-300 dark:border-neutral-600 rounded-full"></div>
-          <div className="absolute bottom-32 right-1/3 w-8 h-8 border border-neutral-300 dark:border-neutral-600 rounded-lg"></div>
+        <div className="absolute inset-0 opacity-5 dark:opacity-10 overflow-hidden">
+          <div className="absolute top-10 left-4 sm:left-10 w-12 h-12 sm:w-20 sm:h-20 border border-neutral-300 dark:border-neutral-600 rounded-full"></div>
+          <div className="absolute top-32 right-4 sm:right-20 w-8 h-8 sm:w-16 sm:h-16 border border-neutral-300 dark:border-neutral-600 rounded-lg rotate-45"></div>
+          <div className="absolute bottom-20 left-1/4 w-6 h-6 sm:w-12 sm:h-12 border border-neutral-300 dark:border-neutral-600 rounded-full"></div>
+          <div className="absolute bottom-32 right-1/3 w-4 h-4 sm:w-8 sm:h-8 border border-neutral-300 dark:border-neutral-600 rounded-lg"></div>
         </div>
 
-        <div className="container mx-auto relative z-10">
+        <div className="container mx-auto relative z-10 px-2 sm:px-4">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -825,10 +816,10 @@ function Portfolio() {
               viewport={{ once: false, amount: 0.3 }}
             >
               <Zap className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Technical Expertise</span>
+              <span className="text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-300">Technical Expertise</span>
             </motion.div>
-            <h2 className="text-4xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">Skills & Technologies</h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">Skills & Technologies</h2>
+            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
               A comprehensive showcase of my technical proficiency across modern development stacks, tools, and
               methodologies that power today's digital solutions.
             </p>
@@ -836,7 +827,7 @@ function Portfolio() {
 
           {/* Skills Grid */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            <div className="grid lg:grid-cols-2 gap-4 md:gap-8 mb-12">
               {skills.map((category, categoryIndex) => (
                 <motion.div
                   key={category.category}
@@ -851,25 +842,24 @@ function Portfolio() {
                     <div className="relative p-6 pb-4">
                       <div className="flex items-center gap-4 mb-6">
                         <motion.div
-                          className={`p-4 rounded-2xl ${
-                            category.color === "emerald"
-                              ? "bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-emerald-500/25"
-                              : category.color === "blue"
-                                ? "bg-gradient-to-br from-blue-500 to-blue-600 shadow-blue-500/25"
-                                : category.color === "purple"
-                                  ? "bg-gradient-to-br from-purple-500 to-purple-600 shadow-purple-500/25"
-                                  : "bg-gradient-to-br from-orange-500 to-orange-600 shadow-orange-500/25"
-                          } shadow-lg`}
+                          className={`p-4 rounded-2xl ${category.color === "emerald"
+                            ? "bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-emerald-500/25"
+                            : category.color === "blue"
+                              ? "bg-gradient-to-br from-blue-500 to-blue-600 shadow-blue-500/25"
+                              : category.color === "purple"
+                                ? "bg-gradient-to-br from-purple-500 to-purple-600 shadow-purple-500/25"
+                                : "bg-gradient-to-br from-orange-500 to-orange-600 shadow-orange-500/25"
+                            } shadow-lg`}
                           whileHover={{ scale: 1.1, rotate: 5 }}
                           transition={{ type: "spring", stiffness: 300 }}
                         >
                           <category.icon className="h-7 w-7 text-white" />
                         </motion.div>
                         <div>
-                          <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-1">
+                          <h3 className="text-lg sm:text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-1">
                             {category.category}
                           </h3>
-                          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                          <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
                             {category.skills.length} Technologies
                           </p>
                         </div>
@@ -887,16 +877,16 @@ function Portfolio() {
                             viewport={{ once: false, amount: 0.3 }}
                             whileHover={{ y: -4 }}
                           >
-                            <div className="w-10 h-10 mb-3 rounded-lg bg-neutral-100 dark:bg-neutral-700 flex items-center justify-center overflow-hidden group-hover/skill:scale-110 transition-transform duration-300">
+                            <div className="w-12 h-12 mb-3 rounded-lg bg-transparent flex items-center justify-center overflow-hidden group-hover/skill:scale-110 transition-transform duration-300">
                               <Image
                                 src={skill.image || "/placeholder.svg"}
                                 alt={skill.name}
-                                width={32}
-                                height={32}
-                                className="w-8 h-8 object-contain"
+                                width={48}
+                                height={48}
+                                className="w-10 h-10 p-1 object-contain bg-white"
                               />
                             </div>
-                            <span className="text-sm font-medium text-neutral-800 dark:text-neutral-200 text-center leading-tight">
+                            <span className="text-xs sm:text-sm font-medium text-neutral-800 dark:text-neutral-200 text-center leading-tight">
                               {skill.name}
                             </span>
                           </motion.div>
@@ -906,15 +896,14 @@ function Portfolio() {
 
                     {/* Decorative Elements */}
                     <div
-                      className={`absolute top-0 right-0 w-32 h-32 ${
-                        category.color === "emerald"
-                          ? "bg-gradient-to-bl from-emerald-500/10 to-transparent"
-                          : category.color === "blue"
-                            ? "bg-gradient-to-bl from-blue-500/10 to-transparent"
-                            : category.color === "purple"
-                              ? "bg-gradient-to-bl from-purple-500/10 to-transparent"
-                              : "bg-gradient-to-bl from-orange-500/10 to-transparent"
-                      } rounded-bl-full`}
+                      className={`absolute top-0 right-0 w-32 h-32 ${category.color === "emerald"
+                        ? "bg-gradient-to-bl from-emerald-500/10 to-transparent"
+                        : category.color === "blue"
+                          ? "bg-gradient-to-bl from-blue-500/10 to-transparent"
+                          : category.color === "purple"
+                            ? "bg-gradient-to-bl from-purple-500/10 to-transparent"
+                            : "bg-gradient-to-bl from-orange-500/10 to-transparent"
+                        } rounded-bl-full`}
                     />
                   </Card>
                 </motion.div>
@@ -931,13 +920,13 @@ function Portfolio() {
             >
               {[
                 {
-                  label: "Frontend Frameworks",
+                  label: "Frontend",
                   count: skills[0].skills.length,
                   icon: Code,
                   color: "emerald",
                 },
                 {
-                  label: "Backend Technologies",
+                  label: "Backend",
                   count: skills[1].skills.length,
                   icon: Server,
                   color: "blue",
@@ -966,34 +955,32 @@ function Portfolio() {
                 >
                   <div className="bg-white dark:bg-neutral-800 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm group-hover:shadow-lg transition-all duration-300">
                     <motion.div
-                      className={`w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center ${
-                        stat.color === "emerald"
-                          ? "bg-emerald-100 dark:bg-emerald-900/30"
-                          : stat.color === "blue"
-                            ? "bg-blue-100 dark:bg-blue-900/30"
-                            : stat.color === "purple"
-                              ? "bg-purple-100 dark:bg-purple-900/30"
-                              : "bg-orange-100 dark:bg-orange-900/30"
-                      }`}
+                      className={`w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center ${stat.color === "emerald"
+                        ? "bg-emerald-100 dark:bg-emerald-900/30"
+                        : stat.color === "blue"
+                          ? "bg-blue-100 dark:bg-blue-900/30"
+                          : stat.color === "purple"
+                            ? "bg-purple-100 dark:bg-purple-900/30"
+                            : "bg-orange-100 dark:bg-orange-900/30"
+                        }`}
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
                       <stat.icon
-                        className={`h-6 w-6 ${
-                          stat.color === "emerald"
-                            ? "text-emerald-600 dark:text-emerald-400"
-                            : stat.color === "blue"
-                              ? "text-blue-600 dark:text-blue-400"
-                              : stat.color === "purple"
-                                ? "text-purple-600 dark:text-purple-400"
-                                : "text-orange-600 dark:text-orange-400"
-                        }`}
+                        className={`h-6 w-6 ${stat.color === "emerald"
+                          ? "text-emerald-600 dark:text-emerald-400"
+                          : stat.color === "blue"
+                            ? "text-blue-600 dark:text-blue-400"
+                            : stat.color === "purple"
+                              ? "text-purple-600 dark:text-purple-400"
+                              : "text-orange-600 dark:text-orange-400"
+                          }`}
                       />
                     </motion.div>
-                    <div className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-1">
+                    <div className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-1">
                       <AnimatedCounter end={stat.count} />
                     </div>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400 font-medium">{stat.label}</p>
+                    <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-medium">{stat.label}</p>
                   </div>
                 </motion.div>
               ))}
@@ -1007,17 +994,27 @@ function Portfolio() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mb-6 max-w-2xl mx-auto">
                 Always learning and adapting to new technologies. Let's discuss how these skills can bring value to your
                 next project.
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  onClick={() => scrollToSection("contact")}
-                  className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Let's Collaborate
+                <a href="mailto:saikotareddy07@gmail.com">
+                  <Button
+                    className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <Mail className="mr-2 h-5 w-5" />
+                    Let's Collaborate
+                  </Button>
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Projects Section */}
+      {/* <section id="projects" className="py-16 px-4 bg-neutral-50 dark:bg-neutral-950">
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </motion.div>
@@ -1027,7 +1024,7 @@ function Portfolio() {
       </section>
 
       {/* Enhanced Projects Section */}
-      <section id="projects" className="py-16 px-4 bg-neutral-50 dark:bg-neutral-950">
+      {/* <section id="projects" className="py-16 px-4 bg-neutral-50 dark:bg-neutral-950">
         <div className="container mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -1042,7 +1039,6 @@ function Portfolio() {
             </p>
           </motion.div>
 
-          {/* Featured Projects */}
           <div className="mb-16">
             <motion.h3
               className="text-2xl font-semibold mb-8 flex items-center gap-2 text-neutral-900 dark:text-neutral-100"
@@ -1054,7 +1050,7 @@ function Portfolio() {
               <Star className="h-6 w-6 text-amber-500" />
               Highlighted Projects
             </motion.h3>
-            <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-4 md:gap-8 max-w-7xl mx-auto">
               {featuredProjects.map((project, index) => (
                 <motion.div
                   key={project.title}
@@ -1104,7 +1100,6 @@ function Portfolio() {
                         {project.description}
                       </p>
 
-                      {/* Project Stats */}
                       <div className="grid grid-cols-3 gap-4 mb-4 p-4 bg-neutral-50 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700">
                         {Object.entries(project.stats).map(([key, value]) => (
                           <div key={key} className="text-center">
@@ -1137,8 +1132,6 @@ function Portfolio() {
               ))}
             </div>
           </div>
-
-          {/* Other Projects */}
           <div>
             <motion.h3
               className="text-2xl font-semibold mb-8 flex items-center gap-2 text-neutral-900 dark:text-neutral-100"
@@ -1189,8 +1182,7 @@ function Portfolio() {
                       <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4 line-clamp-3">
                         {project.description}
                       </p>
-
-                      {/* Mini Stats */}
+                      
                       <div className="grid grid-cols-3 gap-2 mb-4 text-xs">
                         {Object.entries(project.stats).map(([key, value]) => (
                           <div
@@ -1225,13 +1217,13 @@ function Portfolio() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 bg-white dark:bg-neutral-900">
-        <div className="container mx-auto text-center">
+      <section id="contact" className="py-16 px-2 sm:px-4 bg-white dark:bg-neutral-900">
+        <div className="container mx-auto text-center px-2 sm:px-4">
           <motion.h2
-            className="text-3xl font-bold mb-8 text-neutral-900 dark:text-neutral-100"
+            className="text-2xl sm:text-3xl font-bold mb-8 text-neutral-900 dark:text-neutral-100"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -1240,7 +1232,7 @@ function Portfolio() {
             Let's Work Together
           </motion.h2>
           <motion.p
-            className="text-lg text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -1258,20 +1250,22 @@ function Portfolio() {
             viewport={{ once: false, amount: 0.3 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                className="group bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                Get In Touch
-                <motion.div
-                  className="ml-2"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+              <a href="mailto:saikotareddy07@gmail.com">
+                <Button
+                  size="lg"
+                  className="group bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <ArrowRight className="h-5 w-5" />
-                </motion.div>
-              </Button>
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get In Touch
+                  <motion.div
+                    className="ml-2"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                  </motion.div>
+                </Button>
+              </a>
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -1296,15 +1290,16 @@ function Portfolio() {
             viewport={{ once: false, amount: 0.3 }}
           >
             {[
-              { icon: Github, href: "#" },
-              { icon: Linkedin, href: "#" },
-              { icon: Twitter, href: "#" },
+              { icon: Github, href: "https://github.com/saikota01" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/saireddem" },
+              { icon: Twitter, href: "https://x.com/saikota07" },
             ].map((social, index) => (
               <motion.div key={index} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.9 }}>
                 <Button
                   variant="ghost"
                   size="icon"
                   className="rounded-full w-12 h-12 border border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-200 shadow-sm"
+                  onClick={() => window.open(social.href, "_blank")}
                 >
                   <social.icon className="h-5 w-5 text-neutral-600 dark:text-neutral-400" />
                 </Button>
@@ -1317,7 +1312,7 @@ function Portfolio() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
         <div className="container mx-auto text-center">
-          <p className="text-neutral-600 dark:text-neutral-400">
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
             © {new Date().getFullYear()} saikota.in. Built with Next.js & Tailwind CSS.
           </p>
         </div>
