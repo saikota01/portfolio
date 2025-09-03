@@ -346,7 +346,6 @@ function Portfolio() {
       icon: Server,
       color: "blue",
       skills: [
-        { name: "Rest APIs", image: "/backend-skills/restapi.svg?height=40&width=40" },
         { name: "FastAPI", image: "/backend-skills/fastapi.svg?height=40&width=40" },
         { name: "NestJS", image: "/backend-skills/nestjs.svg?height=40&width=40" },
         { name: ".NET", image: "/backend-skills/dotnet.svg?height=40&width=40" },
