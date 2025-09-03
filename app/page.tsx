@@ -456,15 +456,18 @@ function Portfolio() {
   // const otherProjects = projects.filter((p) => !p.featured)
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      })
-      setMobileMenuOpen(false)
-    }
+    setMobileMenuOpen(false)
+
+    setTimeout(() => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest"
+        })
+      }
+    }, 0)
   }
 
   return (
@@ -491,7 +494,7 @@ function Portfolio() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-4 lg:gap-8">
-              {["about", "experience", "skills", "projects", "contact"].map((item, index) => (
+              {["about", "experience", "skills", "contact"].map((item, index) => (
                 <motion.button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -534,7 +537,7 @@ function Portfolio() {
             className="md:hidden overflow-hidden"
           >
             <div className="flex flex-col gap-2 pt-4 border-t border-neutral-200 dark:border-neutral-800 mt-4">
-              {["about", "experience", "skills", "projects", "contact"].map((item) => (
+              {["about", "experience", "skills", "contact"].map((item) => (
                 <motion.button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -624,7 +627,7 @@ function Portfolio() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="group bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="group bg-transparent border-2 border-neutral-400 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:border-neutral-500 dark:hover:border-neutral-500 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <Download className="mr-2 h-5 w-5" />
                     Download Resume
@@ -1269,14 +1272,16 @@ function Portfolio() {
             </motion.div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="outline"
-                size="lg"
-                className="group bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </Button>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="group bg-transparent border-2 border-neutral-400 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:border-neutral-500 dark:hover:border-neutral-500 font-medium px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 
